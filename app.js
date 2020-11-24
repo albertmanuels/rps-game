@@ -16,7 +16,7 @@ const game = () => {
     };
 
 
-    //Memulai game
+    //bermain game
     const playMatch = () => {
         const options = document.querySelectorAll('.options button');
         const playerHand = document.querySelector('.player-hand');
@@ -29,26 +29,26 @@ const game = () => {
             });
         });
 
-        //Computer Options
+        //Komputer
         const computerOptions = ['rock', 'paper', 'scissors'];
 
         options.forEach( option =>{
             option.addEventListener('click', function() {
-                // // //Computer Choice
+                //Pilihan computer
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber];
 
                setTimeout(() => {
-                    //Here is where we call compare hands
+                    //membandingkan pilihan komputer
                 compareHands(this.textContent, computerChoice);
 
-                //Update Images
+                //Mengganti gambar tangan player dan komputer
                 playerHand.src = `./assets/${this.textContent}.png`;
                 computerHand.src =`./assets/${computerChoice}.png`;
                }, 1500)
 
 
-                //Animation 
+                //Animasi 
                 playerHand.style.animation = 'shakePlayer 1.5s ease';
                 computerHand.style.animation = 'shakeComputer 1.5s ease';
             } );
@@ -66,7 +66,7 @@ const game = () => {
         
     // }
 
-    //compare the hands
+    //Membandingkan pilihan player dan komputer
     const compareHands = (playerChoice, computerChoice) => {
         //Update for a tie
         const winner = document.querySelector('.winner');
@@ -77,7 +77,7 @@ const game = () => {
             return;
         }
 
-        //check for rock
+       //mengecek hasil jika pilihan player adalah rock
         if(playerChoice === 'rock'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Player Wins';
@@ -93,7 +93,7 @@ const game = () => {
             }
         }
 
-        //check for paper
+        //mengecek hasil jika pilihan player adalah paper
         if(playerChoice === 'paper'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Computer Wins';
@@ -108,7 +108,7 @@ const game = () => {
                 return;
             }
         }
-        //Check for scissors
+       //mengecek hasil jika pilihan player adalah scissors
         if(playerChoice === 'scissors'){
             if(computerChoice === 'rock'){
                 winner.textContent = 'Computer Wins';
@@ -131,5 +131,5 @@ const game = () => {
     playMatch();
 };
 
-// start the game function
+
 game();
