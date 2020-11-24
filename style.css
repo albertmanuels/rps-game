@@ -90,7 +90,7 @@ div.fadeIn{
     pointer-events: all;
 }
 
-
+/* Untuk mengatur gerakan tangan dari player */
 @keyframes shakePlayer {
     0% {
         transform: rotateY(180deg) translateY(0px) ;
@@ -121,6 +121,7 @@ div.fadeIn{
     }
 }
 
+/* Untuk mengatur gerakan tangan dari komputer */
 @keyframes shakeComputer {
     0% {
         transform:  translateY(0px);
